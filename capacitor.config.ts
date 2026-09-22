@@ -1,9 +1,9 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.fumicontrol.app',
+  appId: 'com.samts.fumicontrol',
   appName: 'FumiControl',
-  webDir: 'dist/fumiintengral-front/browser',
+  webDir: 'dist/fumiintengral_front/browser',
   server: {
     androidScheme: 'https',
     cleartext: true,

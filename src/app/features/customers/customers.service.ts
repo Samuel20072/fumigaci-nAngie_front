@@ -39,6 +39,6 @@ export class CustomersService {
   }
 
   getCustomerServices(customerId: string): Observable<Service[]> {
-    return this.http.get<Service[]>(`/customers/${customerId}/services`);
+    return this.http.get<Service[]>(`/services/customer/${customerId}`);
   }
 }

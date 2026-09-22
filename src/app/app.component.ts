@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { BackButtonService } from './core/services/back-button.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,12 @@ import { RouterOutlet } from '@angular/router';
   imports: [RouterOutlet],
   template: `<router-outlet></router-outlet>`,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'FumiControl';
+  private backButtonService = inject(BackButtonService);
+
+  ngOnInit(): void {
+    this.backButtonService.init();
+  }
 }
+

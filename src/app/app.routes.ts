@@ -84,6 +84,13 @@ export const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'finances',
+        loadComponent: () =>
+          import('./features/finances/pages/finances/finances.page.js').then(
+            (m) => m.FinancesPageComponent,
+          ),
+      },
     ],
   },
   {

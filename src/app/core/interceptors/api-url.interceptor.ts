@@ -1,4 +1,5 @@
 import { HttpInterceptorFn } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 export const apiUrlInterceptor: HttpInterceptorFn = (req, next) => {
   // If the request is already absolute, let it through
@@ -7,7 +8,7 @@ export const apiUrlInterceptor: HttpInterceptorFn = (req, next) => {
   }
 
   // Base URL pointing to the NestJS backend
-  const baseUrl = 'http://localhost:3000';
+  const baseUrl = environment.apiUrl.replace(/\/+$/, '');
   const cleanUrl = req.url.startsWith('/') ? req.url : `/${req.url}`;
   
   const apiReq = req.clone({
