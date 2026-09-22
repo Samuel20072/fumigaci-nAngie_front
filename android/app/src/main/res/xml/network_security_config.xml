@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <network-security-config>
-    <!-- Permite tráfico HTTP sin cifrado (cleartext) para comunicarse con la IP del VPS en esta versión inicial -->
     <base-config cleartextTrafficPermitted="true">
         <trust-anchors>
             <certificates src="system" />
             <certificates src="user" />
         </trust-anchors>
     </base-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">traefik.me</domain>
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">116.203.228.20</domain>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </domain-config>
 </network-security-config>

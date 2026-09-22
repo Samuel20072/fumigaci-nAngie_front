@@ -5,7 +5,7 @@ const config: CapacitorConfig = {
   appName: 'FumiControl',
   webDir: 'dist/fumiintengral_front/browser',
   server: {
-    androidScheme: 'https',
+    androidScheme: 'http',
     cleartext: true,
   },
   plugins: {
